@@ -1,4 +1,4 @@
-const staticAssets = ['./'];
+const staticAssets = ['./', './sw.js'];
 self.addEventListener('oninstall', function (event) { Install(); });
 self.addEventListener('install', function(event) { Install(); });
 self.addEventListener('fetch', function (event) { Fetch(event); });
