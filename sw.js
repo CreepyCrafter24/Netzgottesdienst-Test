@@ -8,6 +8,13 @@ async function Install() {
     cache.addAll(staticAssets);
 }
 
-function Fetch() {
+async function Fetch() {
     console.log('fetching...');
+    const req = event.request;
+    event.respondWith(cacheFirst(req));
+}
+
+async function cacheFirst(req) {
+    const cachedResponse = await caches.match(req);
+    return cachedResponse || fetch(req);
 }
