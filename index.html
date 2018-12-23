@@ -42,6 +42,14 @@
 
         function Initialize() {
             SetH("main");
+            if ('serviceWorker' in navigator) {
+                try {
+                    navigator.serviceWorker.register('sw.js');
+                    console.log('Service-Worker registered');
+                } catch (error) {
+                    console.log('Service-Worker failed to register');
+                }
+            }
         }
     </script>
     <style>
