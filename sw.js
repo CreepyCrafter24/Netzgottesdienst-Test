@@ -1,7 +1,10 @@
-self.addEventListener('oninstall', event => {
+self.addEventListener('oninstall', event => { Install(); });
+self.addEventListener('install', event => { Install(); });
+self.addEventListener('fetch', event => { Fetch(); });
+function Install() {
     console.log('install');
-})
+}
 
-self.addEventListener('fetch', event => {
+function Fetch() {
     console.log('fetch');
-})
+}
