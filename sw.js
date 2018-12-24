@@ -1,4 +1,4 @@
-const staticAssets = ['./', './sw.js'];
+const staticAssets = ['./', './sw.js', './images/drawable/NGL.png'];
 self.addEventListener('oninstall', function (event) { Install(); });
 self.addEventListener('install', function(event) { Install(); });
 self.addEventListener('fetch', function (event) { Fetch(event); });
