@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <title>Diese Seite benötigt Java-Script</title>
@@ -59,7 +59,7 @@
             border: 1px;
             width: 100%;
             height: 100vh;
-            border-color: #000000;
+            border-color: #7BFCFF;
         }
 
         .body {
@@ -75,81 +75,91 @@
         .shown {
             display: block;
         }
+
+        .frame {
+            border-radius: 25px;
+            border: 2px solid #B4FDFF;
+            background-color: #7BFCFF;
+            width: 500px;
+            padding: 10px;
+        }
     </style>
 </head>
 <body bgcolor="#D0E0F5" class="body" onload="Initialize()">
     <center>
-        <div id="jswarning">
-            <h1>Diese Seite ben&ouml;tigt Java-Script.</h1>
-        </div>
-        <div id="main" class="hidden">
-            <p>
+        <div class="frame">
+            <div id="jswarning">
+                <h1>Diese Seite ben&ouml;tigt Java-Script.</h1>
+            </div>
+            <div id="main" class="hidden">
+                <p>
+                    <h3>
+                        Herzlich willkommen zur Live-&Uuml;bertragung der Gottesdienste der
+                        Katholischen Kirchengemeinde St. Peter und Paul in Weil der Stadt
+                    </h3>
+                </p>
+                <br><img alt="" src="images/drawable/NGL.png" width="242" height="203"><br>
+                <big>
+                    <a href="#" onclick="GoToLink('http://netzgottesdienst.click2stream.com/')">Zur Live-&Uuml;bertragung</a>
+                </big>
+                <p>
+                    <b>
+                        Unsere &uuml;blichen Gottesdienst- und Sendezeiten:<br>
+                    </b>
+                    Samstag, 18.30 Uhr - 19.30 Uhr<br>
+                    Sonntag, 10.30 Uhr - 11.30 Uhr<br>
+                    Donnerstag, 9.30 Uhr - 10.15 Uhr<br>
+                </p>
                 <b>
-                    Herzlich willkommen zur Live-&Uuml;bertragung der Gottesdienste der<br>
-                    Katholischen Kirchengemeinde St. Peter und Paul in Weil der Stadt<br>
+                    Bei Fragen und Problemen finden Sie die L&ouml;sungen <a href="#" onclick="SetH('faq')">hier</a>.<br>
+                    Kontakt und R&uuml;ckmeldungen senden Sie bitte an <a href="mailto:info@kirchewds.de">info@kirchewds.de</a>.<br>
+                    Die Homepage unserer Kirchengemeinde erreichen Sie unter <a href="http://www.kirchewds.de/">www.kirchewds.de</a>.<br>
+                    (C) Katholische Kirchengemeinde St. Peter und Paul, Kapuzinerberg 1, D 71263 Weil der Stadt.
                 </b>
-            </p>
-            <br><img alt="" src="images/drawable/NGL.png" width="242" height="203"><br>
-            <big>
-                <a href="#" onclick="GoToLink('http://netzgottesdienst.click2stream.com/')">Zur Live-&Uuml;bertragung</a>
-            </big>
-            <p>
+                <br>
+                <br>
+            </div>
+            <div id="faq" class="hidden">
+                <p>
+                    <h1>
+                        Netzgottesdienst.de<br>
+                        Probleme und L&ouml;sungen
+                    </h1>
+                </p>
+                <p>
+                    <b>Mein Bild oder mein Ton ruckelt oder bricht immer wieder ab.</b><br>
+                    &Uuml;berpr&uuml;fen Sie die Geschwindigkeit Ihrer Internetverbindung.<br>
+                    Sie ben&ouml;tigen eine &Uuml;bertragungsrate von mindestens 1600 kbit/s.<br>
+                    Falls Ihre &Uuml;bertragungsrate zu niedrig ist, Sie uns aber dennoch sehen wollen, lassen Sie uns dies wissen.<br>
+                    Einen Test dazu finden Sie zum Beispiel <a href="http://www.wieistmeineip.de/speedtest/" target="_new">hier</a>.
+                </p>
+                <p>
+                    <b>Ich sehe kein Bild.</b><br>
+                    Außerhalb unserer &Uuml;bertragungszeiten der Gottesdienste sehen Sie kein Bild.<br>
+                    &Uuml;berpr&uuml;fen Sie auch, ob Ihr Browser Flash-Videos abspielen kann.<br>
+                    Zum Beispiel unterst&uuml;tzt das iPad dieses Videoformat mit dem Standard-Browser nicht.<br>
+                    Installieren Sie in diesem Fall einen alternativen Browser.<br>
+                    Manchmal wird ein Zusatzprogramm ben&ouml;tigt um Flash-Videos wiedergeben zu k&ouml;nnen.<br>
+                    Ein Beispiel f&uuml;r Firefox ist <a href="https://addons.mozilla.org/de/firefox/addon/flash-video-downloader/" target="_new">dieses Add-on</a>.
+                </p>
+                Kontakt und R&uuml;ckmeldungen an <a href="mailto:info@kirchewds.de">info@kirchewds.de</a>.
+                <br><br>
                 <b>
-                    Unsere &uuml;blichen Gottesdienst- und Sendezeiten:<br>
+                    <a href="#" onclick="SetH('main')">Zur&uuml;ck zur Live-&Uuml;bertragung</a><br><br>
+                    (C) Katholische Kirchengemeinde St. Peter und Paul, Kapuzinerberg 1, D 71263 Weil der Stadt.<br>
                 </b>
-                Samstag, 18.30 Uhr - 19.30 Uhr<br>
-                Sonntag, 10.30 Uhr - 11.30 Uhr<br>
-                Donnerstag, 9.30 Uhr - 10.15 Uhr<br>
+                <br>
+                <img alt="" src="images/drawable/NGL.png" width="121" height="102">
+            </div>
+            <p>
+                Falls Sie uns in unserem Angebot unterst&uuml;tzen wollen, freuen wir uns &uuml;ber Ihre Spende:<br>
+                Kirchenpflege Weil der Stadt<br>
+                Vereinigte Volksbank AG Sindelfingen<br>
+                BLZ 603 900 00<br>
+                Kto.-Nr. 41232003<br>
+                Stichwort: Netzgottesdienst
             </p>
-            <b>
-                Bei Fragen und Problemen finden Sie die L&ouml;sungen <a href="#" onclick="SetH('faq')">hier</a>.<br>
-                Kontakt und R&uuml;ckmeldungen senden Sie bitte an <a href="mailto:info@kirchewds.de">info@kirchewds.de</a>.<br>
-                Die Homepage unserer Kirchengemeinde erreichen Sie unter <a href="http://www.kirchewds.de/">www.kirchewds.de</a>.<br>
-                (C) Katholische Kirchengemeinde St. Peter und Paul, Kapuzinerberg 1, D 71263 Weil der Stadt.
-            </b>
-            <br>
-            <br>
         </div>
-        <div id="faq" class="hidden">
-            <p>
-                <h1>
-                    Netzgottesdienst.de<br>
-                    Probleme und L&ouml;sungen
-                </h1>
-            </p>
-            <p>
-                <b>Mein Bild oder mein Ton ruckelt oder bricht immer wieder ab.</b><br>
-                &Uuml;berpr&uuml;fen Sie die Schnelligkeit Ihrer Internetverbindung.<br>
-                Sie ben&ouml;tigen eine &Uuml;bertragungsrate von mindestens 1600 kbit/s.<br>
-                Falls Ihre &Uuml;bertragungsrate zu niedrig ist, Sie uns aber dennoch sehen wollen, lassen Sie uns dies wissen.<br>
-                Einen Test dazu finden Sie zum Beispiel <a href="http://www.wieistmeineip.de/speedtest/" target="_new">hier</a>.
-            </p>
-            <p>
-                <b>Ich sehe kein Bild.</b><br>
-                Außerhalb unserer &Uuml;bertragungszeiten der Gottesdienste sehen Sie nur ein Bild unserer Kirche von außen.<br>
-                Wenn Sie auch dies nicht sehen, &uuml;berpr&uuml;fen Sie, ob Ihr Browser Flash-Videos abspielen kann.<br>
-                Zum Beispiel unterst&uuml;tzt das iPad dieses Videoformat mit dem Standard-Browser nicht.<br>
-                Installieren Sie in diesem Fall einen alternativen Browser.<br>
-                Manchmal wird ein Zusatzprogramm ben&ouml;tigt um Flash-Videos wiedergeben zu k&ouml;nnen.<br>
-                Ein Beispiel f&uuml;r Firefox ist <a href="https://addons.mozilla.org/de/firefox/addon/flash-video-downloader/" target="_new">dieses Add-on</a>.
-            </p>
-            Kontakt und R&uuml;ckmeldungen an <a href="mailto:info@kirchewds.de">info@kirchewds.de</a>.
-            <br><br>
-            <b>
-                <a href="#" onclick="SetH('main')">Zur&uuml;ck zur Live-&Uuml;bertragung</a><br><br>
-                (C) Katholische Kirchengemeinde St. Peter und Paul, Kapuzinerberg 1, D 71263 Weil der Stadt.<br>
-            </b>
-            <br>
-            <img alt="" src="images/drawable/NGL.png" width="121" height="102">
-        </div>
-        <p>
-            Falls Sie uns in unserem Angebot unterst&uuml;tzen wollen, freuen wir uns &uuml;ber Ihre Spende:<br>
-            Kirchenpflege Weil der Stadt<br>
-            Vereinigte Volksbank AG Sindelfingen<br>
-            BLZ 603 900 00<br>
-            Kto.-Nr. 41232003<br>
-            Stichwort: Netzgottesdienst
-        </p>
         <br>
         <small>
             Verwendet Code von <a href="https://creepycrafter24.github.io/">CC24</a>
