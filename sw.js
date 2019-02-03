@@ -1,20 +1,44 @@
-const staticAssets = ['./', './sw.js', './images/drawable/NGL.png'];
-self.addEventListener('oninstall', function (event) { Install(); });
-self.addEventListener('install', function(event) { Install(); });
-self.addEventListener('fetch', function (event) { Fetch(event); });
-async function Install() {
-    console.log('installing...');
-    const cache = await caches.open('Netzgottesdienst-static');
-    cache.addAll(staticAssets);
-}
+var cacheName = 'Netzgottesdienst';
+var filesToCache = [
+    '/',
+    './',
+    '/index.html',
+    '/sw.js',
+    './images/drawable/NGL.png'
+];
 
-async function Fetch(event) {
-    console.log('fetching...');
-    const req = event.request;
-    event.respondWith(cacheFirst(req));
-}
+self.addEventListener('install', (event) => {
+    console.log('[ServiceWorker] Install');
+    event.waitUntil(
+        caches.open(cacheName).then(function(cache) {
+            console.log('[ServiceWorker] Caching app shell');
+            return cache.addAll(filesToCache);
+        })
+    );
+});
 
-async function cacheFirst(req) {
-    const cachedResponse = await caches.match(req);
-    return cachedResponse || fetch(req);
-}
+self.addEventListener('activate', (event) => {
+    console.log('[ServiceWorker] Activate');
+    event.waitUntil(
+        caches.keys().then(function(keyList) {
+            return Promise.all(keyList.map(function(key) {
+                if (key !== cacheName && key !== dataCacheName) {
+                    console.log('[ServiceWorker] Removing old cache', key);
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
+    return self.clients.claim();
+});
+
+self.addEventListener('fetch', (event) => {
+    console.log('[Service Worker] Fetch', e.request.url);
+    event.respondWith(async function() {
+        try {
+            return await fetch(event.request);
+        } catch (err) {
+            return caches.match(event.request);
+        }
+    }());
+});
