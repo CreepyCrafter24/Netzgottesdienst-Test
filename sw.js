@@ -32,7 +32,7 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    console.log('[Service Worker] Fetch', e.request.url);
+    console.log('[Service Worker] Fetch', event.request.url);
     event.respondWith(async function() {
         try {
             return await fetch(event.request);
