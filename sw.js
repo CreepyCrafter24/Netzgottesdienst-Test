@@ -1,9 +1,8 @@
 var cacheName = 'Netzgottesdienst';
 var filesToCache = [
-    '/',
     './',
-    '/index.html',
-    '/sw.js',
+    './index.html',
+    './sw.js',
     './images/drawable/NGL.png'
 ];
 
