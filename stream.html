@@ -17,14 +17,14 @@
 </head>
 <body>
     <nav class="orange" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Start</a>
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Hilfe</a>
             <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Start</a></li>
                 <li><a href="hilfe.html">Hilfe</a></li>
-                <li><a href="stream.html">Zum Stream</a></li>
             </ul>
             <ul id="nav-mobile" class="sidenav">
+                <li><a href="index.html">Start</a></li>
                 <li><a href="hilfe.html">Hilfe</a></li>
-                <li><a href="stream.html">Zum Stream</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -37,22 +37,12 @@
     <div class="section no-pad-bot" id="index-banner">
         <div class="container">
             <br><br>
-            <h1 class="header center orange-text"><img alt="Logo" src="NGL.png"></h1>
-            <div class="row center">
-                <h5 class="header col s12 light">Herzlich willkommen zur Live-Übertragung der Gottesdienste der Katholischen Kirchengemeinde St. Peter und Paul in Weil der Stadt</h5>
-            </div>
+            <div style="width:100%;height:0;padding-bottom:56.25%;overflow:hidden;position:relative;"><iframe src="https://v.angelcam.com/iframe?v=kjzy1ge4yn&amp;autoplay=1" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" style="height:auto;position:absolute;top:0;width:100%;left:0;"></iframe></div>
+            <small><a href="https://netzgottesdienst.click2stream.com/">Alternativ</a></small>
         </div>
     </div>
 
     <footer class="page-footer orange" style="bottom: 0px;position: fixed;right: 0px;left: 0px;">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Falls Sie uns unterstützen wollen:</h5>
-                    <p class="grey-text text-lighten-4">Katholische Kirchenpflege Weil der Stadt<br>Vereinigte Volksbank<br>IBAN: DE 26 6039 0000 0041 2320 03<br>BIC: GENODES1BBV<br>Stichwort: Netzgottesdienst</p>
-                </div>
-            </div>
-        </div>
         <div class="footer-copyright">
             <div class="container">
                 Von <a class="orange-text text-lighten-3" href="http://jfronny.github.io">JFronny</a> mit <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
@@ -68,15 +58,6 @@
                 $('.sidenav').sidenav();
             });
         })(jQuery);
-        if ('serviceWorker' in navigator) {
-            try {
-                navigator.serviceWorker.register('sw.js');
-                console.log('Service-Worker registered');
-            } catch (error) {
-                console.log('Service-Worker failed to register');
-            }
-        }
     </script>
 </body>
 </html>
-        

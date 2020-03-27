@@ -17,13 +17,13 @@
 </head>
 <body>
     <nav class="orange" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Start</a>
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Hilfe</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="hilfe.html">Hilfe</a></li>
+                <li><a href="index.html">Start</a></li>
                 <li><a href="stream.html">Zum Stream</a></li>
             </ul>
             <ul id="nav-mobile" class="sidenav">
-                <li><a href="hilfe.html">Hilfe</a></li>
+                <li><a href="index.html">Start</a></li>
                 <li><a href="stream.html">Zum Stream</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -37,22 +37,35 @@
     <div class="section no-pad-bot" id="index-banner">
         <div class="container">
             <br><br>
-            <h1 class="header center orange-text"><img alt="Logo" src="NGL.png"></h1>
+            <h1 class="header center orange-text">Hilfe</h1>
             <div class="row center">
-                <h5 class="header col s12 light">Herzlich willkommen zur Live-Übertragung der Gottesdienste der Katholischen Kirchengemeinde St. Peter und Paul in Weil der Stadt</h5>
+                <p>
+                    <h5 class="header center orange-text">Mein Bild oder mein Ton ruckelt oder bricht immer wieder ab.</h5><br>
+                    &Uuml;berpr&uuml;fen Sie die Geschwindigkeit Ihrer Internetverbindung.<br>
+                    Sie ben&ouml;tigen eine &Uuml;bertragungsrate von mindestens 1600 kbit/s.<br>
+                    Falls Ihre &Uuml;bertragungsrate zu niedrig ist, Sie uns aber dennoch sehen wollen, lassen Sie uns dies wissen.<br>
+                    Einen Test dazu finden Sie zum Beispiel <a href="http://www.wieistmeineip.de/speedtest/" target="_new">hier</a>.
+                </p>
+                <br>
+                <p>
+                    <h5 class="header center orange-text">Ich sehe kein Bild.</h5><br>
+                    Außerhalb unserer &Uuml;bertragungszeiten der Gottesdienste sehen Sie kein Bild.<br>
+                    &Uuml;berpr&uuml;fen Sie auch, ob Ihr Browser Flash-Videos abspielen kann.<br>
+                    Zum Beispiel unterst&uuml;tzen Apple-Ger&auml;te dieses Videoformat mit dem Standard-Browser nicht.<br>
+                    Installieren Sie in diesem Fall einen alternativen Browser.<br>
+                    Manchmal wird ein Zusatzprogramm ben&ouml;tigt um Flash-Videos wiedergeben zu k&ouml;nnen.
+                </p>
+                <br>
+                <p>
+                    <h5 class="header center orange-text">Ich habe keinen Ton.</h5><br>
+                    Sie müssen unten in der Leiste des Filmfensters den Ton einschalten.<br>
+                    Klicken sie dazu in das Fenster und auf das durchgestrichene Lautsprecher-Symbol.
+                </p>
             </div>
         </div>
     </div>
 
     <footer class="page-footer orange" style="bottom: 0px;position: fixed;right: 0px;left: 0px;">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Falls Sie uns unterstützen wollen:</h5>
-                    <p class="grey-text text-lighten-4">Katholische Kirchenpflege Weil der Stadt<br>Vereinigte Volksbank<br>IBAN: DE 26 6039 0000 0041 2320 03<br>BIC: GENODES1BBV<br>Stichwort: Netzgottesdienst</p>
-                </div>
-            </div>
-        </div>
         <div class="footer-copyright">
             <div class="container">
                 Von <a class="orange-text text-lighten-3" href="http://jfronny.github.io">JFronny</a> mit <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
@@ -68,15 +81,6 @@
                 $('.sidenav').sidenav();
             });
         })(jQuery);
-        if ('serviceWorker' in navigator) {
-            try {
-                navigator.serviceWorker.register('sw.js');
-                console.log('Service-Worker registered');
-            } catch (error) {
-                console.log('Service-Worker failed to register');
-            }
-        }
     </script>
 </body>
 </html>
-        
