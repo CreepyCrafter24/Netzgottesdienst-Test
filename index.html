@@ -25,12 +25,14 @@
         .icon-block .material-icons {
             font-size: inherit;
         }
+        .hide-on-desktop {
+        }
     </style>
 </head>
-<body>
+<body onresize="bodyResize()">
     <nav class="orange" role="navigation">
         <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Start</a>
-            <ul class="right hide-on-med-and-down">
+            <ul class="right hide-on-med-and-down" id="desktopMenu">
                 <li><a href="hilfe.html">Hilfe</a></li>
                 <li><a href="stream.html">Zum Stream</a></li>
             </ul>
@@ -59,6 +61,9 @@
                 Samstag, 28.3.2020, 18.30 Uhr - 19.30 Uhr<br>
                 Sonntag, 29.3.2020, 10.30 Uhr - 11.30 Uhr
             </p>
+            <br>
+            <a class="waves-effect waves-light btn hide-on-desktop orange" href="stream.html" style="display: block;">Zum Stream</a><br>
+            <a class="waves-effect waves-light btn hide-on-desktop orange" href="hilfe.html" style="display: block;">Hilfe</a><br>
         </div>
     </div>
 
@@ -85,6 +90,7 @@
             $(function(){
                 $('.sidenav').sidenav();
             });
+            bodyResize();
         })(jQuery);
         if ('serviceWorker' in navigator) {
             try {
@@ -93,6 +99,15 @@
             } catch (error) {
                 console.log('Service-Worker failed to register');
             }
+        }
+        function bodyResize()
+        {
+            var onMobile = getComputedStyle(document.getElementById("desktopMenu"), null).display == "none";
+            var desktopHide = document.getElementsByClassName("hide-on-desktop");
+            $( ".hide-on-desktop" ).each(function( index ) {
+                this.style.display = onMobile ? "none" : "block";
+            });
+            console.log(onMobile);
         }
     </script>
 </body>
